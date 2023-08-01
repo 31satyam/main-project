@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!--navbar start-->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Satyam</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="week1.html">Week-1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="week2.html">Week-2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="week3.html">Week-3</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+          <!--navbae End-->
+   <div class="container text-center" style="background-color: rgb(171, 164, 164);">
+    <div style="padding-bottom: 10px;">
+        <h1 class="text-center">CALCULATOR</h1>
+        <input type="text" name="" id="t1" class="form-control" >
+    </div>
+    <div class="row" style="padding-bottom: 10px;">
+        <div class="col-md-9">
+            <div class="row mt-2">
+                <div class="col-sm-4">
+                    <button onclick="click1('9')" class="form-control">9</button>
+                </div>
+                <div class="col-sm-4">
+                    <button onclick="click1('8')" class="form-control">8</button>
+                </div>
+                <div class="col-sm-4">
+                    <button onclick="click1('7')" class="form-control">7</button>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm-4">
+                    <button onclick="click1('6')" class="form-control">6</button>
+                </div>
+                <div class="col-sm-4">
+                    <button onclick="click1('5')" class="form-control">5</button>
+                </div>
+                <div class="col-sm-4">
+                    <button onclick="click1('4')" class="form-control">4</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 mt-2">
+            <button onclick="equal('=')" class="form-control h-100" >=</button>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-sm-4">
+                    <button onclick="click1('3')" class="form-control">3</button>
+                </div>
+                <div class="col-sm-4">
+                    <button onclick="click1('2')" class="form-control">2</button>
+                </div>
+                <div class="col-sm-4">
+                    <button onclick="click1('1')" class="form-control">1</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <button class="form-control" onclick="click1('*')">*</button>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-md-9">
+            <div class="row mt-2" >
+                <div class="col-sm-4">
+                    <button onclick="click1('0')" class="form-control">0</button>
+                </div>
+                <div class="col-sm-4">
+                    <button onclick="click1('+')" class="form-control">+</button>
+                </div>
+                <div class="col-sm-4">
+                    <button onclick="click1('-')" class="form-control">-</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 mt-2">
+            <button class="form-control" onclick="click1('/')">/</button>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <button class="form-control" onclick="clear1()">Clear</button>
+            </div>
+            <div class="col-md-6">
+                <button class="form-control" onclick="clear2()">back space</button>
+            </div>
+        </div>
+    </div>
+   </div>
+   <!--java script-->
+   <script>
+    var st="";
+    function click1(a){
+        st=st+a;
+         document.getElementById("t1").value=st;
+    }
+    function equal(){
+        st=eval(st);
+        document.getElementById("t1").value=st;
+    }
+    function clear1(){
+        st="";
+        document.getElementById("t1").value=st;
+    }
+    function clear2(){
+        st = st.slice(0,st.length-1);
+        document.getElementById("t1").value=st;
+    }
+   </script>
+</body>
+</html>
